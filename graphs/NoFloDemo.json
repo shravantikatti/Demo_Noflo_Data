@@ -1,7 +1,7 @@
 {
     "caseSensitive": false,
     "properties": {
-        "name": "main",
+        "name": "NoFloDemo",
         "environment": {
             "type": "noflo-nodejs"
         }
@@ -35,7 +35,7 @@
             "metadata": {
                 "label": "SortExtPrice",
                 "x": 540,
-                "y": 108,
+                "y": 72,
                 "width": 72,
                 "height": 72
             }
@@ -45,7 +45,7 @@
             "metadata": {
                 "label": "processPercent",
                 "x": 540,
-                "y": 324,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -54,7 +54,7 @@
             "component": "demo_app/JoinDataFrame",
             "metadata": {
                 "label": "JoinDataFrame",
-                "x": 720,
+                "x": 756,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -64,7 +64,7 @@
             "component": "core/Split",
             "metadata": {
                 "label": "DataTransfer",
-                "x": 864,
+                "x": 900,
                 "y": 216,
                 "width": 72,
                 "height": 72
@@ -74,8 +74,8 @@
             "component": "demo_app/SaveDataFrame",
             "metadata": {
                 "label": "SaveDataFrame",
-                "x": 1044,
-                "y": 144,
+                "x": 1080,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -94,8 +94,8 @@
             "component": "demo_app/ToDataFrame",
             "metadata": {
                 "label": "ToDataFrame",
-                "x": 1044,
-                "y": 288,
+                "x": 1080,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -104,7 +104,7 @@
             "component": "core/Output",
             "metadata": {
                 "label": "ToConsole",
-                "x": 1260,
+                "x": 1296,
                 "y": 468,
                 "width": 72,
                 "height": 72
@@ -114,8 +114,8 @@
             "component": "demo_app/GraphPlot",
             "metadata": {
                 "label": "GraphPlot",
-                "x": 1044,
-                "y": 0,
+                "x": 1080,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
