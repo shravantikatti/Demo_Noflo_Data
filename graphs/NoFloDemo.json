@@ -1,0 +1,268 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "demo_app/readCsv_78jy0": {
+            "component": "demo_app/readCsv",
+            "metadata": {
+                "label": "readCsv",
+                "x": 144,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Split_czhti": {
+            "component": "core/Split",
+            "metadata": {
+                "label": "DataTransfer",
+                "x": 324,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/SortExtPrice_r37hp": {
+            "component": "demo_app/SortExtPrice",
+            "metadata": {
+                "label": "SortExtPrice",
+                "x": 540,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/processPercent_x38ot": {
+            "component": "demo_app/processPercent",
+            "metadata": {
+                "label": "processPercent",
+                "x": 540,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/JoinDataFrame_n68ed": {
+            "component": "demo_app/JoinDataFrame",
+            "metadata": {
+                "label": "JoinDataFrame",
+                "x": 720,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Split_kguql": {
+            "component": "core/Split",
+            "metadata": {
+                "label": "DataTransfer",
+                "x": 864,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/SaveDataFrame_yh8kb": {
+            "component": "demo_app/SaveDataFrame",
+            "metadata": {
+                "label": "SaveDataFrame",
+                "x": 1044,
+                "y": 144,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/GroupBy_9swba": {
+            "component": "demo_app/GroupBy",
+            "metadata": {
+                "label": "GroupBy",
+                "x": 540,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/ToDataFrame_3my0r": {
+            "component": "demo_app/ToDataFrame",
+            "metadata": {
+                "label": "ToDataFrame",
+                "x": 1044,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Output_br0f3": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "ToConsole",
+                "x": 1260,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "demo_app/GraphPlot_4atv2": {
+            "component": "demo_app/GraphPlot",
+            "metadata": {
+                "label": "GraphPlot",
+                "x": 1044,
+                "y": 0,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "demo_app/readCsv_78jy0",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Split_czhti",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_czhti",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/SortExtPrice_r37hp",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_czhti",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/processPercent_x38ot",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "demo_app/SortExtPrice_r37hp",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/JoinDataFrame_n68ed",
+                "port": "df1"
+            }
+        },
+        {
+            "src": {
+                "process": "demo_app/processPercent_x38ot",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/JoinDataFrame_n68ed",
+                "port": "df2"
+            }
+        },
+        {
+            "src": {
+                "process": "demo_app/JoinDataFrame_n68ed",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Split_kguql",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_kguql",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/SaveDataFrame_yh8kb",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_kguql",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/ToDataFrame_3my0r",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_czhti",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/GroupBy_9swba",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "demo_app/GroupBy_9swba",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_br0f3",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "demo_app/ToDataFrame_3my0r",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_br0f3",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "core/Split_kguql",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "demo_app/GraphPlot_4atv2",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "data": "input.csv",
+            "tgt": {
+                "process": "demo_app/readCsv_78jy0",
+                "port": "in"
+            }
+        }
+    ]
+}
